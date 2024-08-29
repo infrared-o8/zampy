@@ -197,9 +197,7 @@ def random_name(n: int = 2) -> str:
     Returns:
         str: A random name composed of 'n' words.
     '''
-    chosen = list()
-    for i in range(n):
-        chosen.append(r.choice(names))
+    chosen = [r.choice(names) for i in range(n)]
     return " ".join(chosen)
 
 def random_number(digits: int = 3, multipleOfTen: bool = True) -> int:
