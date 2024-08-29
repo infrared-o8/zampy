@@ -136,9 +136,6 @@ genres = [
 def user_intlist() -> list:
     '''
     Prompts the user to input a specified number of integers and returns them as a list.
-    
-    Returns:
-        list: A list of integers entered by the user.
     '''
     l = []
     n = int(input("Number of elements: "))
@@ -154,9 +151,6 @@ def user_intlist() -> list:
 def user_strlist() -> list:
     '''
     Prompts the user to input a specified number of strings and returns them as a list.
-    
-    Returns:
-        list: A list of strings entered by the user.
     '''
     l = []
     n = int(input("Number of elements: "))
@@ -168,13 +162,6 @@ def user_strlist() -> list:
 def rsort(a: list = [1, 2, 3], debug: bool = True) -> tuple:
     '''
     Sorts a list in descending order and returns the largest and smallest elements.
-    
-    Args:
-        a (list): The list to be sorted.
-        debug (bool): If True, prints the largest and smallest elements.
-    
-    Returns:
-        tuple: The largest and smallest elements of the list.
     '''
     try:
         a.sort(reverse=True)
@@ -189,13 +176,7 @@ def rsort(a: list = [1, 2, 3], debug: bool = True) -> tuple:
 
 def random_name(n: int = 2) -> str:
     '''
-    Generates a random name with a specified number of words.
-    
-    Args:
-        n (int): Number of words in the name.
-    
-    Returns:
-        str: A random name composed of 'n' words.
+    Generates a random name with a 'n' number of words.
     '''
     chosen = [r.choice(names) for i in range(n)]
     return " ".join(chosen)
@@ -204,51 +185,29 @@ def random_number(digits: int = 3, multipleOfTen: bool = True) -> int:
     '''
     Generates a random number with a specified number of digits.
     
-    Args:
-        digits (int): The number of digits in the number.
-        multipleOfTen (bool): If True, generates a number that is a multiple of ten.
-    
-    Returns:
-        int: A random number with the specified number of digits.
+    multipleOfTen (bool): If True, generates a number that is a multiple of ten.
     '''
     if multipleOfTen:
         return r.randint(1, 9) * (10**digits)
-    else:
-        return r.randint(1 * (10 ** digits), 9 * (10**digits))
+    return r.randint(1 * (10 ** digits), 9 * (10**digits))
 
 def random_age(min: int = 10, max: int = 60) -> int:
     '''
     Generates a random age within the specified range.
-    
-    Args:
-        min (int): Minimum age.
-        max (int): Maximum age.
-    
-    Returns:
-        int: A random age between 'min' and 'max'.
     '''
     return r.randint(min, max)
 
 def random_sport() -> str:
     '''
-    Returns a random sport from a predefined list.
-    
-    Returns:
-        str: The name of a randomly selected sport.
+    Returns a random sport.
     '''
     return r.choice(sports)
 
 def create_file_with_data(file_name="test1", file_type='.dat', data='Lorem ipsum dolor sit amet.'):
     '''
-    Creates a file with the specified name and type, and writes the provided data to it.
+    Creates a file with the specified name and type, and writes the provided data to it. Returns None if error.
     
-    Args:
-        file_name (str): The name of the file to be created.
-        file_type (str): The extension of the file.
-        data (str): The data to be written to the file.
-    
-    Returns:
-        None
+    data (str): The data to be written to the file.
     '''
     try:
         if file_type.lower() == ".dat":
@@ -259,9 +218,6 @@ def create_file_with_data(file_name="test1", file_type='.dat', data='Lorem ipsum
 
 def random_genre() -> str:
     '''
-    Returns a random genre from a predefined list.
-    
-    Returns:
-        str: The name of a randomly selected genre.
+    Returns a random genre.
     '''
     return r.choice(genres)
